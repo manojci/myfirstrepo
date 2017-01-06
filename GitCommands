@@ -1,0 +1,160 @@
+git clone https://github.com/manojci/hello-world.git
+
+git stash 
+
+git stash apply
+
+git status
+
+git checkout master
+
+git checkout 8b5aa9d  		(move to previous commits, head detached)
+
+git add test.txt
+
+git commit -m "Added test.txt file"
+
+git push origin master
+
+git branch
+git branch -a 			(List branches and and also current branch)
+git branch develop 		(only create the branch with all files of current branch and it won't checkout by own)
+git push origin develop 	(push new branch to origin)
+git branch -d develop 		(deletes the branch if it is up todate with central repo)
+git branch -D develop 		(hard delete the branch)
+git branch --list
+git branch -v
+
+git fetch origin
+
+git merge origin
+
+git pull origin master
+
+git log
+
+git show --stat
+
+git whatchanged -1
+
+git diff 3810df6
+
+git reflog
+
+git ls-files
+
+cd .git/
+rm -f index.lock
+
+git remote -v
+
+git remote add upstream https://github.com/manojci/hello-world.git
+
+git remote remove upstream
+
+git remote rename old new
+
+git reset HEAD~2 (back to previous commits)
+
+git reset --hard e2371ba
+
+git diff master origin/master
+
+
+
+Steps to update the local from remote origin
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+git fetch origin master
+
+git diff origin/master master
+
+git merge origin/master
+
+(or)
+
+git pull origin master
+
+
+Steps to update the remote origin from local
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+git status
+
+git add test.txt
+
+git commit -m "Added test.txt file"
+
+git diff origin/master master
+
+git push origin master
+
+
+
+steps:
+~~~~~~
+
+git fetch upstream
+
+git merge feature/dsptcomms upstream/feature/dsptcomms
+
+git push origin feature/dsptcomms
+
+got to previous commits
+~~~~~~~~~~~~~~~~~~~~~~~
+
+git reset --hard number
+
+git config receive.denynonfastforwards false
+
+git push -f origin feature/sso
+
+creating new branch in local and push to origin
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+git checkout upstream/release/3.26.0
+
+git checkout -b release/3.26.0 (or)  git branch --track release/3.28.0 upstream/release/3.28.0 and followed by push
+
+Staging and unstaging
+~~~~~~~~~~~~~~~~~~~~~
+
+git add pom.xml
+
+git reset pom.xml
+
+git reset --hard removes staged and unstaged files(indexed files) and leaves the un-indexed files touched
+
+git reset --mixed  moves all staged files to unstaged area
+
+git reset --soft --> git status
+
+git revert f5bd163 changed to last previous commit and do the merge does a new commit
+
+clean the folder
+~~~~~~~~~~~~~~~~
+
+git config clean.requireForce false  
+
+git clean -i
+
+git grep -c -i -h -W 'word' -- '*.java'  search occurence in tracked files
+
+git grep -e 'Ajax Request sending' --or -e 'SSO UserInfo Details' -- '*.java'
+
+git stash save comments
+
+git stash apply stash@{3}  or git stash pop(delete from stash list)
+
+Deleting branches in local and remote
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+git branch -D develop
+
+git push origin --delete develop
+
+git branch -m old new
+
+git config --global -e
+
+git config --system core.longpaths true  (filename is too long)
